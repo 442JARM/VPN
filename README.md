@@ -9,7 +9,7 @@ We used Node.js version 12.18.4 LTS for development.
 
 ## Usage
 
-1. `git clone https://github.com/442JARM/A3.git`
+1. `git clone https://github.com/442JARM/VPN.git`
 2. `cd A3`
 3. `npm install`
 4. `npm start`
