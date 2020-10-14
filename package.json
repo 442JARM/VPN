@@ -1,0 +1,25 @@
+{
+  "name": "assignment3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/442JARM/A3.git"
+  },
+  "author": "JARM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/442JARM/A3/issues"
+  },
+  "homepage": "https://github.com/442JARM/A3#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "electron": "^10.1.3",
+    "ip": "^1.1.5",
+    "randombytes": "^2.1.0"
+  }
+}

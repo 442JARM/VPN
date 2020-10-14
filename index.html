@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>UBC CPEN 442 - Assignment 3 by JARM</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <h1>UBC CPEN 442 - Assignment 3 by JARM</h1>
+
+  <div class="border_solid-1px-black">
+    <div class="margin_20px font-weight_bold">
+      SYSTEM MESSAGE
+      <button id="continue-button" class="display_none" onClick=handleContinueClick() title="Will be enabled when there's data" disabled>Continue</button>
+    </div>
+    <div class="margin_20px">
+      <ul id="system-message-list" class="message-history-area"></ul>
+    </div>
+  </div>
+
+  <div class="border_solid-1px-black">
+    <div class="margin_20px font-weight_bold">
+      CONFIGURATIONS
+    </div>
+
+    <div class="margin_20px">
+      <div class="display_inline-block">Mode:</div>
+      <input type="radio" id="client-mode-radio-button" name="mode" checked="checked" onclick="switchToMode('client')" />
+      <label for="client-mode-radio-button" onclick="switchToMode('client')">Client</label>
+      <input type="radio" id="server-mode-radio-button" name="mode" onclick="switchToMode('server')" />
+      <label for="server-mode-radio-button" onclick="switchToMode('server')">Server</label>
+    </div>
+
+    <div class="margin_20px">
+      <div class="display_inline-block">"Continue" Button:</div>
+      <input type="radio" id="continue-disable" name="continue" checked="checked"
+        onclick="enableContinueButton(false)" />
+      <label for="continue-disable" onclick="enableContinueButton(false)">Disable</label>
+      <input type="radio" id="continue-enable" name="continue" onclick="enableContinueButton(true)" />
+      <label for="continue-enable" onclick="enableContinueButton(true)">Enable</label>
+    </div>
+
+    <div class="margin_20px">
+      <label for="secret-key-input">Shared Secret Key:</label>
+      <input id="secret-key-input" class="width_100percent" autofocus type="password" />
+    </div>
+
+    <div id="client-menu">
+      <div class="margin_20px">
+        <label for="hostname-input">Hostname (IP address):</label>
+        <input id="hostname-input" class="width_100percent" />
+      </div>
+      <div class="margin_20px">
+        <label for="clients-port-number-input">TCP Port #:</label>
+        <input id="clients-port-number-input" class="width_100percent" type="number" value=8081 />
+      </div>
+      <button id="client-connect-to-server-button" class="button-margin" onclick="connectToServer()">Connect to server</button>
+      <button id="client-disconnect-button" class="button-margin display_none" onclick="terminateConnections()">Terminate connection</button>
+    </div>
+
+    <div id="server-menu" class="display_none">
+      <div class="margin_20px">
+        <label for="servers-port-number-input">TCP Port #:</label>
+        <input id="servers-port-number-input" class="width_100percent" type="number" value=8081 />
+      </div>
+      <button id="server-listen-for-requests-button" class="button-margin" onclick="listenForRequests()">Listen for requests</button>
+      <button id="server-disconnect-button" class="button-margin display_none" onclick="terminateConnections()">Terminate connection(s) and close server</button>
+    </div>
+  </div>
+
+  <div class="border_solid-1px-black">
+    <div class="margin_20px font-weight_bold">
+      DATA TO BE SENT
+    </div>
+    <div class="margin_20px">
+      <input id="data-to-be-sent-input" class="width_100percent" disabled />
+    </div>
+    <button id="data-to-be-sent-button" class="button-margin" onclick="sendMessage()" disabled>Send message</button>
+  </div>
+
+  <div class="border_solid-1px-black">
+    <div class="margin_20px font-weight_bold">
+      DATA AS RECEIVED
+    </div>
+    <div class="margin_20px">
+      <ul id="data-message-list" class="message-history-area">
+      </ul>
+    </div>
+  </div>
+
+  <script src="./a3.js"></script>
+</body>
+
+</html>
